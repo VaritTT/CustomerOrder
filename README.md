@@ -11,11 +11,9 @@ Web application for shopping
 * MySQL Database
 
 ## Setup 
-
-## Setup 
 1.Download composer from https://getcomposer.org
 
-2.Using Mpdf to create PDF (Report, Invoice)
+2.Using Mpdf to create PDF (Report, Invoice, etc.)
 
 ```bash
 composer require mpdf/mpdf
@@ -31,21 +29,22 @@ $mpdf->WriteHTML('<h1>Hello world!</h1>');
 $mpdf->Output();
 ```
 * download th_sarabun fonts and put files into /vendor/mpdf/mpdf/ttfonts
-* setting this in /vendor/mpdf/mpdf/src/Config/FontVariables.php by add
+* setting /vendor/mpdf/mpdf/src/Config/FontVariables.php by add this
 
 ```php
-
 'fontdata' => [
-				"sarabun" => [
-					'R' => "THSarabun.ttf",
-					'B' => "THSarabun-Bold.ttf",
-					'I' => "THSarabun-Italic.ttf",
-					'BI' => "THSarabun-BoldItalic.ttf",
-					'useOTL' => 0x00,
-					'useKashida' => 75,
-				],
+		"sarabun" => [
+			'R' => "THSarabun.ttf",
+			'B' => "THSarabun-Bold.ttf",
+			'I' => "THSarabun-Italic.ttf",
+			'BI' => "THSarabun-BoldItalic.ttf",
+			'useOTL' => 0x00,
+			'useKashida' => 75,
+		],
 ],
 ```
+
+* Create a new Mpdf, then set the default size and font.* 
 
 ```php
 $mpdf = new \Mpdf\Mpdf([
